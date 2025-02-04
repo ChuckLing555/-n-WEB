@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLCT_LIZARDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CHITIETCHITIEU">
+    <Key>
+      <PropertyRef Name="MaCT" />
+    </Key>
+    <Property Name="MaCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int32" />
+    <Property Name="MaLoaiCT" Type="Int32" />
+    <Property Name="MaTaiKhoan" Type="Int32" />
+    <Property Name="SoTienCT" Type="Double" />
+    <Property Name="NgayChi" Type="DateTime" Precision="0" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <NavigationProperty Name="LOAICHITIEU" Relationship="Self.PK_CTCT_LOAICHITIEU" FromRole="CHITIETCHITIEU" ToRole="LOAICHITIEU" />
+    <NavigationProperty Name="NGUOIDUNG" Relationship="Self.PK_CTCT_NGUOIDUNG" FromRole="CHITIETCHITIEU" ToRole="NGUOIDUNG" />
+    <NavigationProperty Name="TAIKHOAN" Relationship="Self.PK_CTCT_TAIKHOAN" FromRole="CHITIETCHITIEU" ToRole="TAIKHOAN" />
+  </EntityType>
+  <EntityType Name="CHITIETTHUNHAP">
+    <Key>
+      <PropertyRef Name="MaTN" />
+    </Key>
+    <Property Name="MaTN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int32" />
+    <Property Name="MaLoaiTN" Type="Int32" />
+    <Property Name="MaTaiKhoan" Type="Int32" />
+    <Property Name="SoTienTN" Type="Double" />
+    <Property Name="NgayThu" Type="DateTime" Precision="0" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <NavigationProperty Name="LOAITHUNHAP" Relationship="Self.PK_CTTN_LOAITHUNHAP" FromRole="CHITIETTHUNHAP" ToRole="LOAITHUNHAP" />
+    <NavigationProperty Name="NGUOIDUNG" Relationship="Self.PK_CTTN_NGUOIDUNG" FromRole="CHITIETTHUNHAP" ToRole="NGUOIDUNG" />
+    <NavigationProperty Name="TAIKHOAN" Relationship="Self.PK_CTTN_TAIKHOAN" FromRole="CHITIETTHUNHAP" ToRole="TAIKHOAN" />
+  </EntityType>
+  <EntityType Name="KHOANNO">
+    <Key>
+      <PropertyRef Name="MaKN" />
+    </Key>
+    <Property Name="MaKN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int32" />
+    <Property Name="MaTaiKhoan" Type="Int32" />
+    <Property Name="SoTienNo" Type="Double" />
+    <Property Name="NgayMuonNo" Type="DateTime" Precision="0" />
+    <Property Name="NgayTra" Type="DateTime" Precision="0" />
+    <Property Name="NguoiVay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <NavigationProperty Name="NGUOIDUNG" Relationship="Self.PK_KHOANNO_NGUOIDUNG" FromRole="KHOANNO" ToRole="NGUOIDUNG" />
+    <NavigationProperty Name="TAIKHOAN" Relationship="Self.PK_KHOANNO_TAIKHOAN" FromRole="KHOANNO" ToRole="TAIKHOAN" />
+  </EntityType>
+  <EntityType Name="KHOANVAY">
+    <Key>
+      <PropertyRef Name="MaKV" />
+    </Key>
+    <Property Name="MaKV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int32" />
+    <Property Name="MaTaiKhoan" Type="Int32" />
+    <Property Name="SoTienVay" Type="Double" />
+    <Property Name="NgayChoVay" Type="DateTime" Precision="0" />
+    <Property Name="NgayTra" Type="DateTime" Precision="0" />
+    <Property Name="NguoiNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <NavigationProperty Name="NGUOIDUNG" Relationship="Self.PK_KHOANVAY_NGUOIDUNG" FromRole="KHOANVAY" ToRole="NGUOIDUNG" />
+    <NavigationProperty Name="TAIKHOAN" Relationship="Self.PK_KHOANVAY_TAIKHOAN" FromRole="KHOANVAY" ToRole="TAIKHOAN" />
+  </EntityType>
+  <EntityType Name="LOAICHITIEU">
+    <Key>
+      <PropertyRef Name="MaLoaiCT" />
+    </Key>
+    <Property Name="MaLoaiCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenChiTieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <NavigationProperty Name="CHITIETCHITIEU" Relationship="Self.PK_CTCT_LOAICHITIEU" FromRole="LOAICHITIEU" ToRole="CHITIETCHITIEU" />
+  </EntityType>
+  <EntityType Name="LOAITHUNHAP">
+    <Key>
+      <PropertyRef Name="MaLoaiTN" />
+    </Key>
+    <Property Name="MaLoaiTN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenThuNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <NavigationProperty Name="CHITIETTHUNHAP" Relationship="Self.PK_CTTN_LOAITHUNHAP" FromRole="LOAITHUNHAP" ToRole="CHITIETTHUNHAP" />
+  </EntityType>
+  <EntityType Name="NGUOIDUNG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AnhDaiDien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MatKhau" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MaPin" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <NavigationProperty Name="CHITIETCHITIEU" Relationship="Self.PK_CTCT_NGUOIDUNG" FromRole="NGUOIDUNG" ToRole="CHITIETCHITIEU" />
+    <NavigationProperty Name="CHITIETTHUNHAP" Relationship="Self.PK_CTTN_NGUOIDUNG" FromRole="NGUOIDUNG" ToRole="CHITIETTHUNHAP" />
+    <NavigationProperty Name="KHOANNO" Relationship="Self.PK_KHOANNO_NGUOIDUNG" FromRole="NGUOIDUNG" ToRole="KHOANNO" />
+    <NavigationProperty Name="KHOANVAY" Relationship="Self.PK_KHOANVAY_NGUOIDUNG" FromRole="NGUOIDUNG" ToRole="KHOANVAY" />
+    <NavigationProperty Name="PHANHOI" Relationship="Self.PK_PHANHOI_NGUOIDUNG" FromRole="NGUOIDUNG" ToRole="PHANHOI" />
+    <NavigationProperty Name="TAIKHOAN" Relationship="Self.PK_TAIKHOAN_NGUOIDUNG" FromRole="NGUOIDUNG" ToRole="TAIKHOAN" />
+  </EntityType>
+  <EntityType Name="PHANHOI">
+    <Key>
+      <PropertyRef Name="MaPH" />
+    </Key>
+    <Property Name="MaPH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int32" />
+    <Property Name="TenNguoiDung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LienLac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="YKien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NGUOIDUNG" Relationship="Self.PK_PHANHOI_NGUOIDUNG" FromRole="PHANHOI" ToRole="NGUOIDUNG" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MaTaiKhoan" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MaTaiKhoan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SoTien" Type="Double" />
+    <Property Name="TenTaiKhoan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <NavigationProperty Name="CHITIETCHITIEU" Relationship="Self.PK_CTCT_TAIKHOAN" FromRole="TAIKHOAN" ToRole="CHITIETCHITIEU" />
+    <NavigationProperty Name="CHITIETTHUNHAP" Relationship="Self.PK_CTTN_TAIKHOAN" FromRole="TAIKHOAN" ToRole="CHITIETTHUNHAP" />
+    <NavigationProperty Name="KHOANNO" Relationship="Self.PK_KHOANNO_TAIKHOAN" FromRole="TAIKHOAN" ToRole="KHOANNO" />
+    <NavigationProperty Name="KHOANVAY" Relationship="Self.PK_KHOANVAY_TAIKHOAN" FromRole="TAIKHOAN" ToRole="KHOANVAY" />
+    <NavigationProperty Name="NGUOIDUNG" Relationship="Self.PK_TAIKHOAN_NGUOIDUNG" FromRole="TAIKHOAN" ToRole="NGUOIDUNG" />
+  </EntityType>
+  <Association Name="PK_CTCT_LOAICHITIEU">
+    <End Role="LOAICHITIEU" Type="Self.LOAICHITIEU" Multiplicity="0..1" />
+    <End Role="CHITIETCHITIEU" Type="Self.CHITIETCHITIEU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAICHITIEU">
+        <PropertyRef Name="MaLoaiCT" />
+      </Principal>
+      <Dependent Role="CHITIETCHITIEU">
+        <PropertyRef Name="MaLoaiCT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_CTCT_NGUOIDUNG">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="CHITIETCHITIEU" Type="Self.CHITIETCHITIEU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CHITIETCHITIEU">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_CTCT_TAIKHOAN">
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="0..1" />
+    <End Role="CHITIETCHITIEU" Type="Self.CHITIETCHITIEU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MaTaiKhoan" />
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CHITIETCHITIEU">
+        <PropertyRef Name="MaTaiKhoan" />
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_CTTN_LOAITHUNHAP">
+    <End Role="LOAITHUNHAP" Type="Self.LOAITHUNHAP" Multiplicity="0..1" />
+    <End Role="CHITIETTHUNHAP" Type="Self.CHITIETTHUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAITHUNHAP">
+        <PropertyRef Name="MaLoaiTN" />
+      </Principal>
+      <Dependent Role="CHITIETTHUNHAP">
+        <PropertyRef Name="MaLoaiTN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_CTTN_NGUOIDUNG">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="CHITIETTHUNHAP" Type="Self.CHITIETTHUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CHITIETTHUNHAP">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_CTTN_TAIKHOAN">
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="0..1" />
+    <End Role="CHITIETTHUNHAP" Type="Self.CHITIETTHUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MaTaiKhoan" />
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CHITIETTHUNHAP">
+        <PropertyRef Name="MaTaiKhoan" />
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_KHOANNO_NGUOIDUNG">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="KHOANNO" Type="Self.KHOANNO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KHOANNO">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_KHOANNO_TAIKHOAN">
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="0..1" />
+    <End Role="KHOANNO" Type="Self.KHOANNO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MaTaiKhoan" />
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KHOANNO">
+        <PropertyRef Name="MaTaiKhoan" />
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_KHOANVAY_NGUOIDUNG">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="KHOANVAY" Type="Self.KHOANVAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KHOANVAY">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_KHOANVAY_TAIKHOAN">
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="0..1" />
+    <End Role="KHOANVAY" Type="Self.KHOANVAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MaTaiKhoan" />
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KHOANVAY">
+        <PropertyRef Name="MaTaiKhoan" />
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_PHANHOI_NGUOIDUNG">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+    <End Role="PHANHOI" Type="Self.PHANHOI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PHANHOI">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK_TAIKHOAN_NGUOIDUNG">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="1" />
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TAIKHOAN">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLCT_LIZARDEtt" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHITIETCHITIEU" EntityType="Self.CHITIETCHITIEU" />
+    <EntitySet Name="CHITIETTHUNHAP" EntityType="Self.CHITIETTHUNHAP" />
+    <EntitySet Name="KHOANNO" EntityType="Self.KHOANNO" />
+    <EntitySet Name="KHOANVAY" EntityType="Self.KHOANVAY" />
+    <EntitySet Name="LOAICHITIEU" EntityType="Self.LOAICHITIEU" />
+    <EntitySet Name="LOAITHUNHAP" EntityType="Self.LOAITHUNHAP" />
+    <EntitySet Name="NGUOIDUNG" EntityType="Self.NGUOIDUNG" />
+    <EntitySet Name="PHANHOI" EntityType="Self.PHANHOI" />
+    <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" />
+    <AssociationSet Name="PK_CTCT_LOAICHITIEU" Association="Self.PK_CTCT_LOAICHITIEU">
+      <End Role="LOAICHITIEU" EntitySet="LOAICHITIEU" />
+      <End Role="CHITIETCHITIEU" EntitySet="CHITIETCHITIEU" />
+    </AssociationSet>
+    <AssociationSet Name="PK_CTCT_NGUOIDUNG" Association="Self.PK_CTCT_NGUOIDUNG">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="CHITIETCHITIEU" EntitySet="CHITIETCHITIEU" />
+    </AssociationSet>
+    <AssociationSet Name="PK_CTCT_TAIKHOAN" Association="Self.PK_CTCT_TAIKHOAN">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+      <End Role="CHITIETCHITIEU" EntitySet="CHITIETCHITIEU" />
+    </AssociationSet>
+    <AssociationSet Name="PK_CTTN_LOAITHUNHAP" Association="Self.PK_CTTN_LOAITHUNHAP">
+      <End Role="LOAITHUNHAP" EntitySet="LOAITHUNHAP" />
+      <End Role="CHITIETTHUNHAP" EntitySet="CHITIETTHUNHAP" />
+    </AssociationSet>
+    <AssociationSet Name="PK_CTTN_NGUOIDUNG" Association="Self.PK_CTTN_NGUOIDUNG">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="CHITIETTHUNHAP" EntitySet="CHITIETTHUNHAP" />
+    </AssociationSet>
+    <AssociationSet Name="PK_CTTN_TAIKHOAN" Association="Self.PK_CTTN_TAIKHOAN">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+      <End Role="CHITIETTHUNHAP" EntitySet="CHITIETTHUNHAP" />
+    </AssociationSet>
+    <AssociationSet Name="PK_KHOANNO_NGUOIDUNG" Association="Self.PK_KHOANNO_NGUOIDUNG">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="KHOANNO" EntitySet="KHOANNO" />
+    </AssociationSet>
+    <AssociationSet Name="PK_KHOANNO_TAIKHOAN" Association="Self.PK_KHOANNO_TAIKHOAN">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+      <End Role="KHOANNO" EntitySet="KHOANNO" />
+    </AssociationSet>
+    <AssociationSet Name="PK_KHOANVAY_NGUOIDUNG" Association="Self.PK_KHOANVAY_NGUOIDUNG">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="KHOANVAY" EntitySet="KHOANVAY" />
+    </AssociationSet>
+    <AssociationSet Name="PK_KHOANVAY_TAIKHOAN" Association="Self.PK_KHOANVAY_TAIKHOAN">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+      <End Role="KHOANVAY" EntitySet="KHOANVAY" />
+    </AssociationSet>
+    <AssociationSet Name="PK_PHANHOI_NGUOIDUNG" Association="Self.PK_PHANHOI_NGUOIDUNG">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="PHANHOI" EntitySet="PHANHOI" />
+    </AssociationSet>
+    <AssociationSet Name="PK_TAIKHOAN_NGUOIDUNG" Association="Self.PK_TAIKHOAN_NGUOIDUNG">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E6411AA-5D0C-4903-8E22-233DFCCD59A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAO</RootNamespace>
+    <AssemblyName>DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CHITIETCHITIEU.cs">
+      <DependentUpon>lizard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETTHUNHAP.cs">
+      <DependentUpon>lizard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KHOANNO.cs">
+      <DependentUpon>lizard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KHOANVAY.cs">
+      <DependentUpon>lizard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lizard.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lizard.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lizard.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lizard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="lizard.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lizard.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LOAICHITIEU.cs">
+      <DependentUpon>lizard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiChiTieuDAO.cs" />
+    <Compile Include="LOAITHUNHAP.cs">
+      <DependentUpon>lizard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiThuNhapDAO.cs" />
+    <Compile Include="NGUOIDUNG.cs">
+      <DependentUpon>lizard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDungDAO.cs" />
+    <Compile Include="PHANHOI.cs">
+      <DependentUpon>lizard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHoiAdminDAO.cs" />
+    <Compile Include="TAIKHOAN.cs">
+      <DependentUpon>lizard.tt</DependentUpon>
+    </Compile>
+    <Compile Include="userDangKyDAO.cs" />
+    <Compile Include="userDangNhapDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userDoiMatKhauDAO.cs" />
+    <Compile Include="userKhoanBiNoDAO.cs" />
+    <Compile Include="userPhanHoiDAO.cs" />
+    <Compile Include="userReportDAO.cs" />
+    <Compile Include="userTaiKhoanDAO.cs" />
+    <Compile Include="userThemChiTieuDAO.cs" />
+    <Compile Include="userKhoanChoVayDAO.cs" />
+    <Compile Include="userThemThuNhapDAO.cs" />
+    <Compile Include="userThongKeDAO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{4cb54b64-8e8a-4e0d-9e26-0ff2bc0de1c7}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="lizard.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>lizard.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="lizard.edmx.diagram">
+      <DependentUpon>lizard.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lizard.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>lizard.Context.cs</LastGenOutput>
+      <DependentUpon>lizard.edmx</DependentUpon>
+    </Content>
+    <Content Include="lizard.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>lizard.edmx</DependentUpon>
+      <LastGenOutput>lizard.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
