@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../vendor/fontawesome/webfonts/fa-brands-400.ttf">
+    <link rel="shortcut icon" href="../img/layout/logo-icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/lichsugiaohang.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>LỊCH SỬ GIAO DỊCH</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../vendor/Trang-chu.html"><img class="icon" src="../img/layout/logo.jpg" alt="logo-header"></a>
+            </div>
+            <div id="toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="menu"> 
+                <div class="menu1">
+                    <li><a href="">XE ĐẠP</a>
+                        <ul class="sub-menu">
+                            <li><a href="../vendor/xe-dia-hinh.html">Xe địa hình</a></li>
+                            <li><a href="">Xe đua địa hình</a></li>
+                            <li><a href="">Xe đường trường</a></li>
+                            <li><a href="">Xe thành phố</a></li>
+                            <li><a href="">Xe Touring</a></li>
+                            <li><a href="">Xe Gravel</a></li>
+                            <li><a href="">Xe trẻ em</a></li>
+                            <li><a href="">Tất cả</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">PHỤ KIỆN</a>
+                        <ul class="sub-menu">
+                            <li class="sub1">Phụ Kiện</li>
+                            <li><a href="../vendor/Trang-gio-hang.html">Đèn</a></li>
+                            <li><a href="">Bình nước &amp; Gọng bình</a></li>
+                            <li><a href="">Vỏ, ruột</a></li>
+                            <li><a href="">Bơm xe đạp</a></li>
+                            <li><a href="">Tất cả</a></li>
+                            </li>
+                            <li class="sub1">Phụ Tùng</li>
+                            <li><a href="">Bánh xe</a></li>
+                            <li><a href="">Cổ tay &amp; tay láy</a></li>
+                            <li><a href="">Bàn đạp</a></li>
+                            <li><a href="">Bộ trục giữa</a></li>
+                            <li><a href="">Cốt yên</a></li>
+                            <li><a href="">Phụ tùng khung xe</a></li>
+                            <li><a href="">Yên xe</a></li>
+                            <li><a href="">Tay nắm &amp; dây quấn</a></li>
+                            <li><a href="">Tất cả</a></li>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="">MỚI</a></li>
+                    <li><a href="">KHUYẾN MÃI</a></li>
+                    <li><a href="">BÁN CHẠY</a></li>
+                </div>
+            </div>
+            <button id="cart">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                Giỏ Hàng
+            </button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Giỏ Hàng</h5>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="cart-row">
+                            <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                            <span class="cart-price cart-header cart-column">Giá</span>
+                            <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                        </div>
+                        <div class="cart-items">
+
+                        </div>
+                        <div class="cart-total">
+                            <strong class="cart-total-title">Tổng Cộng:</strong>
+                            <span class="cart-total-price">0VNĐ</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                        <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="other">
+            <div class="container">
+                <div class="row">
+                    <li class="search col-6 col-lg-6">
+                        <input type="text" placeholder="Tìm kiếm" >
+                        <a class="sea fa-solid fa-magnifying-glass" href=""></a>
+                    </li>
+                    <div class="user col col-lg-6 other1">
+                        <li class="col col-lg-6"><a href="../vendor/Trang-Dang-nhap-Dang-ky.html">Tài khoản</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="khung">
+            <div class="position">
+                <div class="history navbar justify-content-center">
+                    <h2 class="one">LỊCH SỬ GIAO DỊCH</h2>
+                </div>
+                <div class="border bg-light">
+                    <div class="container mt-3">
+        <form action="">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã đơn hàng</th>
+                        <th>Ngày đặt</th>
+                        <th>Số sản phẩm</th>
+                        <th>Tổng tiền</th>
+                        <th>Trạng thái</th>
+                        <th>Đơn bị hủy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="demo">
+                        <td>#001
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                Chi tiết đơn hàng
+                            </button>
+                              <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="exampleModalLabel1">Danh Sách Sản Phẩm</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <h2>TOP FUEL 8</h2>
+                                      <img src="../img/xe-dia-hinh/TOP-FUEL-8_Hero.jpg" alt="">
+                                      <p>Số lượng: 2</p>
+                                      <p>Đơn giá: 42.500.000</p>
+                                      <p>Thành tiền: 83.000.000</p>
+                                      <p>Tổng tiền của đơn: 84.000.000</p>
+                                      <p>Người nhận: <input type="text" name="name"> </p>
+                                      <p>Ngày giờ đặt: <input type="date" name="giodat"> </p>
+                                      <p>Ngày giờ duyệt: <input type="date" name="gioduyet"> </p>
+                                      <p>Ngày giờ giao: <input type="date" name="giogiao"> </p>
+                                      <p>Ngày giờ nhận: <input type="date" name="gionhan"> </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                      <button type="button" class="btn btn-primary">Lưu thay đổi</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </td>
+                        <td>30/12/2023</td>
+                        <td>2</td>
+                        <td>150.000.000</td>
+                        <td>
+                            <div class="display-container">
+                                <p class="mySlides">Đang xử lý
+                                    
+                                </p>
+                                <p class="mySlides">Đã duyệt</p>
+                                <p class="mySlides">Đang giao hàng</p>
+                                <p class="mySlides">Hoàn thành</p>
+                              
+                                <button class="image-button button-left" onclick="plusDivs(-1)">&#10094;</button>
+                                <button class="image-button button-right" onclick="plusDivs(1)">&#10095;</button>
+                            </div>                 
+                            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Bạn muốn hủy đơn ?</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Tiếp tục hủy.
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Hủy đơn</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Mời nhập lý do hủy đơn.</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <input id="lydo" type="text" placeholder="Lý do hủy đơn" name="huydon" required="required">
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Từ chối hủy</button>
+                                      <input class="insu" type="submit" value="Gửi" data-bs-target="#exampleModalToggle" class="btn btn-primary">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Hủy đơn</button>
+                        </td>
+                        <td id="lydohuy">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#002
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                Chi tiết đơn hàng
+                            </button>
+                              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="exampleModalLabel2">Danh Sách Sản Phẩm</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <h2>Đèn Bontrager Light IonCompR</h2>
+                                      <img src="../img/Den/BontragerLightIonCompRFlareRCitySet_30763_A_Primary_1x1-416x416.jpeg" alt="">
+                                      <p>Số lượng: 5</p>
+                                      <p>Đơn giá: 600.000</p>
+                                      <p>Thành tiền: 3.000.000</p>
+                                      <p>Tổng tiền của đơn: 3.000.000</p>
+                                      <p>Người nhận: <input type="text" name="name"> </p>
+                                      <p>Ngày giờ đặt: <input type="date" name="giodat"> </p>
+                                      <p>Ngày giờ duyệt: <input type="date" name="gioduyet"> </p>
+                                      <p>Ngày giờ giao: <input type="date" name="giogiao"> </p>
+                                      <p>Ngày giờ nhận: <input type="date" name="gionhan"> </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                      <button type="button" class="btn btn-primary">Lưu thay đổi</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </td>
+                        <td>23/09/2023</td>
+                        <td>5</td>
+                        <td>3.000.000</td>
+                        <td>Đã duyệt</td>
+                        <td id="lydohuy"></td>
+                    </tr>
+                    <tr>
+                        <td>#003
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                                Chi tiết đơn hàng
+                            </button>
+                              <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="exampleModalLabel3">Danh Sách Sản Phẩm</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <h2>Marlin 7 2023</h2>
+                                      <img src="../img/xe-dia-hinh/Marlin7_23_36967_C_Primary-check.jpg" alt="">
+                                      <p>Số lượng: 3</p>
+                                      <p>Đơn giá: 21.900.000</p>
+                                      <p>Thành tiền: 43.800.000</p>
+                                      <p>Tổng tiền của đơn: 43.800.000</p>
+                                      <p>Người nhận: <input type="text" name="name"> </p>
+                                      <p>Ngày giờ đặt: <input type="date" name="giodat"> </p>
+                                      <p>Ngày giờ duyệt: <input type="date" name="gioduyet"> </p>
+                                      <p>Ngày giờ giao: <input type="date" name="giogiao"> </p>
+                                      <p>Ngày giờ nhận: <input type="date" name="gionhan"> </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                      <button type="button" class="btn btn-primary">Lưu thay đổi</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </td>
+                        <td>17/06/2023</td>
+                        <td>3</td>
+                        <td>43.800.000</td>
+                        <td>Hoàn thành</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>#004
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                Chi tiết đơn hàng
+                            </button>
+                              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="exampleModalLabel2">Danh Sách Sản Phẩm</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <h2>Đèn Sau Xe Đạp Bontrager Flame R City</h2>
+                                      <img src="../img/Den/Bontrager-Flare-R-City-Rear-Bike-Light-copy-416x416.jpg" alt="">
+                                      <p>Số lượng: 1</p>
+                                      <p>Đơn giá: 1.000.000</p>
+                                      <p>Thành tiền: 1.000.000</p>
+                                      <p>Tổng tiền của đơn: 1.000.000</p>
+                                      <p>Người nhận: <input type="text" name="name"> </p>
+                                      <p>Ngày giờ đặt: <input type="date" name="giodat"> </p>
+                                      <p>Ngày giờ duyệt: <input type="date" name="gioduyet"> </p>
+                                      <p>Ngày giờ giao: <input type="date" name="giogiao"> </p>
+                                      <p>Ngày giờ nhận: <input type="date" name="gionhan"> </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                      <button type="button" class="btn btn-primary">Lưu thay đổi</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </td>
+                        <td>02/5/2023</td>
+                        <td>1</td>
+                        <td>1.000.000</td>
+                        <td>Đã hủy</td>
+                        <td id="lydohuy">thay đổi địa chỉ</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pt">
+                <div aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="?Page1">1</a>
+                        
+                        </li>
+                        <li class="page-item"><a class="page-link" href="?Page2">2</a>
+
+                        </li>
+                        <li class="page-item"><a class="page-link" href="?Page3">3</a></li>
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </form>
+
+                </div>
+            </div>
+        </div>
+            <form id="sortForm" method="GET">
+                <label for="sort">Sắp xếp theo:</label>
+                <select name="sort" id="sort">
+                  <option value="date">Ngày</option>
+                  <option value="amount">Số tiền</option>
+                  <option value="status">Trạng thái</option>
+                </select>
+                
+                <label for="order">Thứ tự:</label>
+                <select name="order" id="order">
+                  <option value="asc">Tăng dần</option>
+                  <option value="desc">Giảm dần</option>
+                </select>
+                <br>
+                <label for="num">Số lượng đơn hàng/trang:</label>
+                <input class="border border-black" type="number" name="num" id="num" min="1" max="100">
+                <button type="submit">Chọn</button>
+              </form>
+              
+              <script>
+                // Lắng nghe sự kiện submit form
+                document.getElementById("sortForm").addEventListener("submit", function(event) {
+                  event.preventDefault(); // Ngăn chặn việc submit form
+                  
+                  // Lấy giá trị từ các trường input
+                  var sortValue = document.getElementById("sort").value;
+                  var orderValue = document.getElementById("order").value;
+                  var numValue = document.getElementById("num").value;
+                  
+                  // Tạo querystring mới
+                  var queryString = "?sort=" + sortValue + "&order=" + orderValue + "&num=" + numValue;
+                  
+                  // Cập nhật URL với querystring mới
+                  window.location.search = queryString;
+                });
+              </script>
+
+                        
+    </main>
+    <footer class="bg-img-ft">
+        <div class="container">
+            <div class="row foot">
+                <div class="col col-lg-6">
+                    <div class="img-foot">
+                        <img class="logo-foot" src="../img/layout/logo.jpg" alt="logo-footer">
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-6">
+                            <h2>Thông tin Trek</h2>
+                            <p><a href="">Về Trek</a></p>
+                            <p><a href="">Công nghệ</a></p>
+                            <p><a href="">Tin tức</a></p>
+                        </div>
+                        <div class="col col-lg-6">
+                            <h2>Hỗ trợ</h2>
+                            <p><a href="">Chính sách bảo hành</a></p>
+                            <p><a href="">Mẫu xe năm trước</a></p>
+                            <p><a href="">Đại lý ủy quyền</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot-lk col col-lg-6">
+                    <div>
+                        <h2>Kết nối với chúng tôi</h2>
+                        <a class="fa-brands fa-facebook" href=""></a>
+                        <a class="fa-brands fa-instagram" href=""></a>
+                        <a class="fa-brands fa-twitter" href=""></a>
+                    </div>
+                    <div class="contact">
+                        <h2>Contact</h2>
+                        <p class="size">Premium Distribution Co.Ltd</p>
+                        <div class="row">
+                            <p class="col-2">Điện thoại</p>
+                            <p class="col col-lg-10">1900 633 802</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-2">Mail</p>
+                            <p class="col col-lg-10">marketing@premiumdistribution.vn</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-2">Địa chỉ</p>
+                            <div class="col col-lg-10">
+                                <p>154-156 Nguyen Huu Tho, Phuoc Kien, Nha Be, HCM</p>
+                                <p>Hours: Mon - Fri 8:30am - 8:00pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ride">
+            <div>
+                <img class="rideimg" src="../img/layout/logo-footer.jpg" alt="RIDE OR DIE">
+                <p>&copy; 2023 CKC TH22E</p>
+                <p>Ý tưởng từ Trekvietnam.vn</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/layout.js"></script>
+    <script src="../js/trang-chu.js"></script>
+    <script src="../js/lichsugiaodich.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+.main{margin: 30px;}
+#sec-1 img{width: 100%; display: block;}
+form{line-height: 3rem;}
+.img-detail img{width: 200px; display: block;}
+form label input{ border: 1px solid black; padding: 5px; width: 100px;}
+a>input{
+    
+    background-color:  #d61313; 
+    color: #fff; padding: 10px 0; 
+    border-radius: 5px;
+    width: 200px;
+}
+.detail div:not(.if-video){
+    margin: 0 5px 5px;
+    padding: 25px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid gray;
+    border-radius: 3px;
+    width: 170px;
+    height: 170px;
+}
+iframe{
+    margin: 0 0 0 -13px;
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+.detail div{
+    transition: 0.5s;
+}
+.detail div:hover{
+    /* transition:opacity 3s, font 2s, transform 1s;
+	opacity:1;
+	font-size:80px; */
+	transform: scale(2);
+    background-color: #fff;
+}
+#sec-1>div{position: relative;}
+#sale, .sale{
+    position: absolute;
+    color: #d61313;
+    left: 5px;
+    top: 5px;
+}
+.mua input{margin-bottom: 1rem;}
+#sale>i{font-size: 10rem;}
+span.sale{ 
+    color: #fff; 
+    top: 90px; left: 60px;
+    font-size: 2rem; 
+    background-color: #d61313;
+}
+.sale-cont{
+    font-size: 2rem;
+    color: #d61313;
+}
+@media screen and (max-width: 860px){
+    .detail div:hover{
+        transform: scale(1);
+    }
+    .main{margin: auto;}
+    #sale>i{font-size: 4rem;}
+    span.sale{color: #fff; top: 27px; left: 13px;font-size: x-large;}
+}
+.comment{
+    border: 1px solid black; 
+    background-color: rgb(255, 207, 136); 
+    border-radius: 5px;
+    padding: 3rem;
+}
+.comment img{
+    width: 100%;
+}
+.comment div>img{
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; 
+}
+.comment>i{font-size: 2rem; padding-bottom: 30px;}
+.comment>div{display: flex; padding-bottom: 1rem;}
+.comment>div div{padding: 0 30px;}
+.comment>div div>p{line-height: 1rem;}
+.p1{font-weight: bold;}
+.pt{display: flex;flex-direction: row;justify-content: center;}
+#comt{display: flex;width:80%;} 
+#comt>p{flex: 2;}
+form{line-height: 1.5rem;}
+#comt>input{border-radius: 20px;}
+#comt .in1{flex: 6; border: 1px solid gray; margin-right: 1rem; padding:5px 10px;font-size: large;}
+#comt .in2{flex: 1;padding:5px;font-size: large;}
+#sec-3>h1{ padding: 2rem;color: #de0a0a;font-weight: bold;}

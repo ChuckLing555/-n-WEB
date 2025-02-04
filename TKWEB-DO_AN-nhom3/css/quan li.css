@@ -1,0 +1,51 @@
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+main{
+    background-image: url('../img/trang-chu/20_Giant_SEPT_wallpaper_920x1200.jpg');
+}
+div.panel-heading{
+    text-align:center;
+}
+.table {
+    width: 100%;
+}
+
+.table tr {
+    border-bottom: solid blue 1px;
+}
+.panel {
+    width: 60%;
+    margin: 0 auto;
+    border: solid #1b1f27 1px;
+}
+
+.panel-heading {
+    background-color: #181529;
+    padding: 3px;
+    color: white;
+}
+
+.panel-body {
+    padding: 10px;
+}
+
+.panel-body label {
+    font-weight: bold;
+}
+
+.form-group {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    display: block;
+    width: 98%;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.pt{display: flex;flex-direction: row;justify-content: center;}

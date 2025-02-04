@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../vendor/fontawesome/webfonts/fa-brands-400.ttf">
+    <link rel="shortcut icon" href="../img/layout/logo-icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/trang-chu.css">
+    <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="../css/HeadShop.css">
+    <link rel="stylesheet" href="../css/Thongkebaocao.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>Thống Kê Báo Cáo</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../vendor/Trang-chu.html"><img class="icon" src="../img/layout/logo.jpg" alt="logo-header"></a>
+            </div>
+            <div id="toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="menu">
+                <div class="menu1">
+                    <li><a href="">XE ĐẠP</a>
+                        <ul class="sub-menu">
+                            <li><a href="../vendor/xe-dia-hinh.html">Xe địa hình</a></li>
+                            <li><a href="">Xe đua địa hình</a></li>
+                            <li><a href="">Xe đường trường</a></li>
+                            <li><a href="">Xe thành phố</a></li>
+                            <li><a href="">Xe Touring</a></li>
+                            <li><a href="">Xe Gravel</a></li>
+                            <li><a href="">Xe trẻ em</a></li>
+                            <li><a href="">Tất cả</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">PHỤ KIỆN</a>
+                        <ul class="sub-menu">
+                            <li class="sub1">Phụ Kiện</li>
+                            <li><a href="../vendor/Trang-gio-hang.html">Đèn</a></li>
+                            <li><a href="">Bình nước &amp; Gọng bình</a></li>
+                            <li><a href="">Vỏ, ruột</a></li>
+                            <li><a href="">Bơm xe đạp</a></li>
+                            <li><a href="">Tất cả</a></li>
+                    </li>
+                    <li class="sub1">Phụ Tùng</li>
+                    <li><a href="">Bánh xe</a></li>
+                    <li><a href="">Cổ tay &amp; tay láy</a></li>
+                    <li><a href="">Bàn đạp</a></li>
+                    <li><a href="">Bộ trục giữa</a></li>
+                    <li><a href="">Cốt yên</a></li>
+                    <li><a href="">Phụ tùng khung xe</a></li>
+                    <li><a href="">Yên xe</a></li>
+                    <li><a href="">Tay nắm &amp; dây quấn</a></li>
+                    <li><a href="">Tất cả</a></li>
+                    </li>
+                    </ul>
+                    </li>
+                    <li><a href="">MỚI</a></li>
+                    <li><a href="">KHUYẾN MÃI</a></li>
+                    <li><a href="">BÁN CHẠY</a></li>
+                </div>
+            </div>
+            <button id="cart">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                Giỏ Hàng
+            </button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Giỏ Hàng</h5>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="cart-row">
+                            <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                            <span class="cart-price cart-header cart-column">Giá</span>
+                            <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                        </div>
+                        <div class="cart-items">
+
+                        </div>
+                        <div class="cart-total">
+                            <strong class="cart-total-title">Tổng Cộng:</strong>
+                            <span class="cart-total-price">0VNĐ</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                        <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="other">
+            <div class="container">
+                <div class="row">
+                    <li class="search col-6 col-lg-6">
+                        <input type="text" placeholder="Tìm kiếm">
+                        <a class="sea fa-solid fa-magnifying-glass" href=""></a>
+                    </li>
+                    <div class="user col col-lg-6 other1">
+                        <li class="col col-lg-6"><a href="../vendor/Trang-Dang-nhap-Dang-ky.html">Tài khoản</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="tieude">
+          <div class="container">  
+              <div class="row menu">
+                <div class="col-md-3">
+                  <h3>Tổng số sản phẩm</h3>
+                  <p class="tong" id="totalProducts"></p>
+                </div>
+                <div class="col-md-3">
+                  <h3>Số nhân viên</h3>
+                  <p class="tong" id="totalMembers"></p>
+                </div>
+                <div class="col-md-3">
+                  <h3>Số đơn hàng</h3>
+                  <p class="tong" id="totalOrders"></p>
+                </div>
+                <div class="col-md-3 ">
+                  <h3>Tổng doanh thu</h3>
+                  <p class="tong" id="totalRevenue"></p>
+                </div>
+              </div>
+              <div class="bieu_do">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3>Số đơn hàng của từng trạng thái</h3>
+                      <div class="row">
+                        <div class="col col-lg-6 pie">
+                          <canvas id="orderStatusChart-pie"></canvas>
+                        </div>
+                        <div class="col col-lg-6">
+                          <canvas id="orderStatusChart"></canvas>
+                          <span class="color_baocao1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span> : Đang lên đơn </span>
+                          <span class="color_baocao2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span> : Đang giao </span>
+                          <span class="color_baocao3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span> : Đã giao </span>
+                          <span class="color_baocao4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span> : Đơn đã hủy </span>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3>Số đơn hàng theo thời gian</h3>
+                    <label for="yearSelect1">Chọn năm:</label>
+                    <select id="yearSelect1" onchange="loadOrderCountByMonth()">
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                    </select>
+                    <div class="pie-share1">
+                      <canvas id="orderCountByMonthChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3>Doanh thu theo thời gian</h3>
+                    <label for="yearSelect2">Chọn năm:</label>
+                    <select id="yearSelect2" onchange="loadRevenueByMonth()">
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                    </select>
+                    <div class="pie-share1">
+                      <canvas id="revenueByMonthChart"></canvas>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3>Số lượng sản phẩm bán theo từng loại.</h3>
+                    <label for="yearSelect3">Chọn năm:</label>
+                    <select id="yearSelect3" onchange="loadProductSalesByMonth()">
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                    </select>
+                    <div class="pie-share1">
+                      <canvas id="productSalesByMonthChart"></canvas>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3>Cổ phần cổ đông công ty</h3>
+                    <div class="pie-share">
+                      <canvas id="company_shares-pie"></canvas>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+          </div> 
+    </main>
+    <footer class="bg-img-ft">
+        <div class="container">
+            <div class="row foot">
+                <div class="col col-lg-6">
+                    <div class="img-foot">
+                        <img class="logo-foot" src="../img/layout/logo.jpg" alt="logo-footer">
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-6">
+                            <h2>Thông tin Trek</h2>
+                            <p><a href="">Về Trek</a></p>
+                            <p><a href="">Công nghệ</a></p>
+                            <p><a href="">Tin tức</a></p>
+                        </div>
+                        <div class="col col-lg-6">
+                            <h2>Hỗ trợ</h2>
+                            <p><a href="">Chính sách bảo hành</a></p>
+                            <p><a href="">Mẫu xe năm trước</a></p>
+                            <p><a href="">Đại lý ủy quyền</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot-lk col col-lg-6">
+                    <div>
+                        <h2>Kết nối với chúng tôi</h2>
+                        <a class="fa-brands fa-facebook" href=""></a>
+                        <a class="fa-brands fa-instagram" href=""></a>
+                        <a class="fa-brands fa-twitter" href=""></a>
+                    </div>
+                    <div class="contact">
+                        <h2>Contact</h2>
+                        <p class="size">Premium Distribution Co.Ltd</p>
+                        <div class="row">
+                            <p class="col-2">Điện thoại</p>
+                            <p class="col col-lg-10">1900 633 802</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-2">Mail</p>
+                            <p class="col col-lg-10">marketing@premiumdistribution.vn</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-2">Địa chỉ</p>
+                            <div class="col col-lg-10">
+                                <p>154-156 Nguyen Huu Tho, Phuoc Kien, Nha Be, HCM</p>
+                                <p>Hours: Mon - Fri 8:30am - 8:00pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ride">
+            <div>
+                <img class="rideimg" src="../img/layout/logo-footer.jpg" alt="RIDE OR DIE">
+                <p>&copy; 2023 CKC TH22E</p>
+                <p>Ý tưởng từ Trekvietnam.vn</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/layout.js"></script>
+    <script src="../js/trang-chu.js"></script>
+    <script src="../js/Shop.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        
+// Dữ liệu thống kê giả định
+  const totalProducts = 1000;
+  const totalMembers = 5000;
+  const totalOrders = 200;
+  const totalRevenue = 5000000;
+
+  const orderCountByMonthData = {
+      "Tháng 1": 20,
+      "Tháng 2": 15,
+      "Tháng 3": 25,
+      "Tháng 4": 30,
+      "Tháng 5": 10,
+      "Tháng 6": 65,
+      "Tháng 7": 55,
+      "Tháng 8": 50,
+      "Tháng 9": 70,
+      "Tháng 10": 110,
+      "Tháng 11": 90,
+      "Tháng 12": 75
+    };
+  const revenueByMonthData = {
+      "Tháng 1": 2000,
+      "Tháng 2": 1500,
+      "Tháng 3": 2500,
+      "Tháng 4": 3000,
+      "Tháng 5": 1000,
+      "Tháng 6": 6500,
+      "Tháng 7": 5500,
+      "Tháng 8": 5000,
+      "Tháng 9": 7000,
+      "Tháng 10": 11000,
+      "Tháng 11": 9000,
+      "Tháng 12": 7500
+    };
+  const productSalesByMonthData = {
+      "Product A": {
+        "Tháng 1": 20,
+      "Tháng 2": 15,
+      "Tháng 3": 25,
+      "Tháng 4": 30,
+      "Tháng 5": 10,
+      "Tháng 6": 65,
+      "Tháng 7": 55,
+      "Tháng 8": 50,
+      "Tháng 9": 70,
+      "Tháng 10": 110,
+      "Tháng 11": 90,
+      "Tháng 12": 75
+      },
+      "Product B": {
+        "Tháng 1": 10,
+      "Tháng 2": 25,
+      "Tháng 3": 45,
+      "Tháng 4": 20,
+      "Tháng 5": 50,
+      "Tháng 6": 45,
+      "Tháng 7": 75,
+      "Tháng 8": 60,
+      "Tháng 9": 70,
+      "Tháng 10": 80,
+      "Tháng 11": 120,
+      "Tháng 12": 85
+      }
+    };
+
+// Hiển thị dữ liệu tổng số sản phẩm, số thành viên, số đơn hàng
+document.getElementById('totalProducts').textContent = totalProducts;
+document.getElementById('totalMembers').textContent = totalMembers;
+document.getElementById('totalOrders').textContent = totalOrders;
+document.getElementById('totalRevenue').textContent = totalRevenue;
+
+// Hiển thị biểu đồ số đơn hàng của từng trạng thái
+const orderStatusChartCtx = document.getElementById('orderStatusChart-pie').getContext('2d');
+new Chart(orderStatusChartCtx, {
+  type: 'pie',
+  data: {
+    labels: ['Đang lên đơn','Đang giao','Đã giao','Đơn đã hủy'],
+    datasets: [{
+      label: 'Số đơn hàng',
+      data: [50,100,30,20],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(54, 162, 235, 0.7)',
+        'rgba(75, 192, 192, 0.7)',
+        'rgba(255, 206, 86, 0.7)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(255, 206, 86, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+const orderStatusChartpieCtx = document.getElementById('orderStatusChart').getContext('2d');
+new Chart(orderStatusChartpieCtx, {
+  type: 'bar',
+  data: {
+    labels: ['Đang lên đơn','Đang giao','Đã giao','Đơn đã hủy'],
+    datasets: [{
+      label: 'Số đơn hàng',
+      data: [50,100,30,20],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(54, 162, 235, 0.7)',
+        'rgba(75, 192, 192, 0.7)',
+        'rgba(255, 206, 86, 0.7)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(255, 206, 86, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+// Hiển thị biểu đồ số đơn hàng theo thời gian
+function loadOrderCountByMonth() {
+  const year = document.getElementById('yearSelect1').value;
+  const orderCountByMonthChartCtx = document.getElementById('orderCountByMonthChart').getContext('2d');
+  const orderCountByMonthChart = new Chart(orderCountByMonthChartCtx, {
+    type: 'line',
+    data: {
+      labels: Object.keys(orderCountByMonthData),
+      datasets: [{
+        label: 'Số đơn hàng',
+        data: Object.values(orderCountByMonthData),
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
+// Hiển thị biểu đồ doanh thu theo thời gian
+function loadRevenueByMonth() {
+  const year = document.getElementById('yearSelect2').value;
+  const revenueByMonthChartCtx = document.getElementById('revenueByMonthChart').getContext('2d');
+  const revenueByMonthChart = new Chart(revenueByMonthChartCtx, {
+    type: 'bar',
+    data: {
+      labels: Object.keys(revenueByMonthData),
+      datasets: [{
+        label: 'Doanh thu ($)',
+        data: Object.values(revenueByMonthData),
+        backgroundColor: 'rgba(75, 192, 192, 0.7)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
+// Hiển thị biểu đồ số lượng sản phẩm bán được theo từng loai
+function loadProductSalesByMonth() {
+  const year = document.getElementById('yearSelect3').value;
+  const productSalesByMonthChartCtx = document.getElementById('productSalesByMonthChart').getContext('2d');
+  const productSalesByMonthChart = new Chart(productSalesByMonthChartCtx, {
+    type: 'bar',
+    data: {
+      labels: Object.keys(productSalesByMonthData["Product A"]),
+      datasets: [{
+        label: 'Doanh thu xe đạp',
+        data: Object.values(productSalesByMonthData["Product A"]),
+        backgroundColor: 'rgba(255, 99, 132, 0.7)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Doanh thu phụ kiện',
+        data: Object.values(productSalesByMonthData["Product B"]),
+        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Doanh thu phụ tùng',
+        data: Object.values(productSalesByMonthData["Product B"]),
+        backgroundColor: 'rgba(255, 206, 86, 0.7)',
+        borderColor: 'rgba(84, 192, 275, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
+//Hiển thị biểu đồ số cổ phần công ty
+const company_sharesCtx=document.getElementById('company_shares-pie');
+new Chart(company_sharesCtx,{
+  type: 'pie',
+  data: {
+    labels: ['Nguyễn Đức Hải','Nguyễn Thị Trúc Linh','Nguyễn Viết Dương','Võ Đức Mạnh'],
+    datasets: [{
+      label: 'Cổ phần công ty (%)',
+      data: [50, 20, 15, 15],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(54, 162, 235, 0.7)',
+        'rgba(75, 192, 192, 0.7)',
+        'rgba(255, 255, 0, 0.904)',
+        'rgba(255, 206, 86, 0.7)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(255, 255, 0, 1)',
+        'rgba(255, 206, 86, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});   
+    </script>
+</body>
+</html>

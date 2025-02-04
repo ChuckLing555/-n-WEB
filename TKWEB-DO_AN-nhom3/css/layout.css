@@ -1,0 +1,180 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root{
+    line-height: 35px;
+    font-size: x-large;
+}
+li{list-style: none;}
+a{
+    font-size: large;
+    text-decoration-line: none;
+    color: #fff;
+}
+/* header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 20;
+} */
+nav{
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 5%;
+    background-color: rgba(0, 0, 0, 0.818);
+    padding: 0 20px 0 0;
+    
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+.icon{width: 5rem;display: block;}
+/*----------------logo*/
+.logo{
+    flex: 1; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;}
+/*----------------menu*/
+.menu{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.menu1{
+    display: flex; 
+    justify-content: space-around;
+    flex-wrap: wrap; gap: 5%;
+    flex-direction: row;
+    align-content: center;
+}
+.menu1>li, .user>li{
+    padding: 0 10px;
+    display: block;
+    position: relative;
+    transition: 1s;
+}
+.menu1>li:hover{
+    background-color:rgb(3, 35, 69);
+    border-radius: 30px;
+}
+.menu1>li:hover .sub-menu, .other1>li:hover .sub-menu{
+    visibility: visible;
+    top: 35px;
+}
+.sub1{
+    font-size: large;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+.sub-menu{
+    position: absolute;
+    padding: 10px 0 10px 20px; 
+    line-height: 2rem; 
+    width: 250px;
+    border: black solid 0.1rem;
+    visibility: hidden;
+    background-color: rgba(3, 35, 69, 0.575);
+    color: #fff;
+    top: 70px;
+    transition: 0.5s;
+}
+.sub-menu a:hover{
+    color:rgb(255, 207, 136);
+    transition: 0.3s;
+}
+#toggle{
+    display: none;
+    color: #fff;
+    font-size: xx-large;
+    cursor: pointer;
+    position: relative;
+}
+
+/*----------------other*/
+.other{background-color: rgba(0, 0, 0, 0.818);padding: 5px;}
+.other a:hover{color: rgb(255, 207, 136);}
+.search{
+    border: black solid 0.1rem; 
+    background-color: #fff;
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+}
+.sea{color: black;}
+input{border: none;width: 100%;font-size: larger;}
+input:focus{outline: none;display: block;}
+input::placeholder, input{color: rgb(3, 35, 69);}
+.user{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.user>li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*-----------------------------------------*/
+footer{
+    background-image: url('../img/layout/bg-footer.jpg');
+    background-repeat:no-repeat;
+	background-position:center center;
+    color: #fff;
+    padding: 20px;
+}
+.bg-img-ft{background-size: cover;}
+.logo-foot{width: 300px;}
+.img-foot{display: flex; flex-direction: row;justify-content: center;}
+.rideimg{width: 400px;}
+.ride{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align-last: center;
+}
+.size{font-size: x-large;}
+.ride p{font-size: 20px;line-height: 35px;color: gray;}
+.foot-lk a{font-size: xx-large; padding: 10px 10px 10px 0;}
+.foot-lk>div{padding: 40px 0 ;}
+.foot>div{padding: 0 0 35px;}
+footer a:hover{
+    color: rgb(104, 143, 183);
+    padding: 5px;
+    background-color: rgba(2, 19, 36, 0.707);
+    border-radius: 5px;
+}
+footer a{color: rgb(170, 170, 170);transition: 0.5s;}
+.contact{ transition: 2s;}
+.contact:hover{background-color: rgba(2, 19, 36, 0.707);}
+footer>div:first-child p{font-style: italic;}
+/*--------------------------------*/
+@media screen and (max-width: 860px) {
+    #toggle{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+    #toggle:hover{color: rgb(176, 4, 4);}
+    .menu1{
+        position: absolute;
+        top: 85px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        padding: 20px 20px 50px 20px;
+        border: black solid 2px;
+    }
+    .menu1:hover{background-color: rgba(0, 0, 0, 0.537);transition: 1s;}
+    .menu{display: none;}
+    .menu1>li:hover .sub-menu{top: 0;}
+    .menu .sub-menu{top: 10px;left: 130px;}
+}
